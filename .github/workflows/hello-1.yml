@@ -1,0 +1,14 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: ls -a
+
+    - name: write greeting
+      run: echo "Hello, ${{ github.actor }}" > greetings.txt
+
+    - name: print greeting
+      run: cat greetings.txt
